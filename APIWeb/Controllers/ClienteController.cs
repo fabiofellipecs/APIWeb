@@ -52,8 +52,7 @@ namespace APIWeb.Controllers
 
             try
             {
-                if (!ModelState.IsValid)
-                    return BadRequest();
+                if (!ModelState.IsValid) return BadRequest();
 
                 var add = await _repository.Create(model);
                 if (add) return Ok(success);

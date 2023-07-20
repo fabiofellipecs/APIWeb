@@ -12,7 +12,6 @@ builder.Services.AddAuthorizationPolicies();
 
 #endregion
 
-
 #region Build
 
 var app = builder.Build();

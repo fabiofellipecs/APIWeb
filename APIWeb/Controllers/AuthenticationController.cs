@@ -26,11 +26,9 @@ namespace APIWeb.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return BadRequest();
+                if (!ModelState.IsValid) return BadRequest();
 
-                if (user.Role != Roles.Admin)
-                    return BadRequest();
+                if (user.Role != Roles.Admin) return BadRequest();
 
                 var result = await _identityService.CadastrarUsuario(user);
                 if (result.Success) return Ok(result);
@@ -50,8 +48,7 @@ namespace APIWeb.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return BadRequest();
+                if (!ModelState.IsValid) return BadRequest();
 
                 var result = await _identityService.LoginUsuario(user);
                 if (result.Success) return Ok(result);
